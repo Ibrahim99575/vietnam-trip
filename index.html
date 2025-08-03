@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vietnam Bachelor Trip – Aug 30–Sep 6, 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&callback=initMap"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background-attachment: fixed;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="20" cy="80" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 6s ease infinite;
+      color: #fff;
+      padding: 3rem 1rem 2rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: float 20s linear infinite;
+      opacity: 0.3;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    @keyframes float {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      animation: titleGlow 3s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 1;
+    }
+    
+    @keyframes titleGlow {
+      from { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 10px rgba(255,255,255,0.2); }
+      to { text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.4); }
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .section {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      margin: 2rem auto;
+      max-width: 900px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.05);
+      padding: 2.5rem 2.5rem 2rem 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .section:hover::before {
+      left: 100%;
+    }
+    h2 {
+      color: #667eea;
+      margin-top: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #667eea, #f093fb);
+      border-radius: 2px;
+      animation: expandLine 0.8s ease-out;
+    }
+    
+    @keyframes expandLine {
+      from { width: 0; }
+      to { width: 60px; }
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      background: rgba(248, 251, 255, 0.8);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    
+    table:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    
+    th, td {
+      padding: 1rem 0.8rem;
+      border-bottom: 1px solid rgba(224, 230, 237, 0.5);
+      text-align: left;
+      transition: background-color 0.3s ease;
+    }
+    
+    th {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #ffffff;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 0.9rem;
+      position: relative;
+    }
+    
+    tr {
+      transition: all 0.3s ease;
+    }
+    
+    tr:hover {
+      background: rgba(102, 126, 234, 0.05);
+      transform: scale(1.01);
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .highlight {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+      border: 2px solid rgba(102, 126, 234, 0.2);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      font-weight: 500;
+      color: #667eea;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .highlight::before {
+      content: '✈️';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      opacity: 0.3;
+    }
+    .links a {
+      color: #ffffff;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      text-decoration: none;
+      margin: 0.5rem 1rem 0.5rem 0;
+      padding: 0.8rem 1.5rem;
+      font-weight: 500;
+      border-radius: 25px;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .links a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      background: linear-gradient(135deg, #764ba2, #f093fb);
+    }
+    
+    .links a:hover::before {
+      left: 100%;
+    }
+    
+    ul, ol {
+      margin: 1rem 0 1.5rem 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 0.5rem;
+    }
+    
+    ul li::before {
+      content: '🎯';
+      position: absolute;
+      left: -1.5rem;
+      top: 0;
+    }
+    
+    .accommodation-list {
+      margin-bottom: 1.5rem;
+    }
+    
+    .accommodation-list ul li::before {
+      content: '🏨';
+    }
+    
+    .note {
+      color: #7f8c8d;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(127, 140, 141, 0.1);
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+      position: relative;
+    }
+    
+    .note::before {
+      content: 'ℹ️';
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      font-size: 1.2rem;
+    }
+    
+    .note {
+      padding-left: 2.5rem;
+    }
+    @media (max-width: 768px) {
+      .section { 
+        padding: 1.5rem 1rem; 
+        margin: 1rem;
+      }
+      
+      table, th, td { 
+        font-size: 0.9rem; 
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .countdown-box {
+        margin: 0.3rem;
+        min-width: 70px;
+        padding: 1rem;
+      }
+      
+      .countdown-value {
+        font-size: 2rem;
+      }
+      
+      .links a {
+        display: block;
+        margin: 0.5rem 0;
+        text-align: center;
+      }
+      
+      .map-container {
+        height: 400px;
+      }
+      
+      .map-legend {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 1rem;
+        max-height: none;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header {
+        padding: 2rem 1rem 1.5rem 1rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+      
+      .countdown-box {
+        min-width: 60px;
+        padding: 0.8rem;
+      }
+      
+      .countdown-value {
+        font-size: 1.5rem;
+      }
+      
+      .map-container {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vietnam Bachelor Trip</h1>
+    <div class="subtitle">Ho Chi Minh City, Phu Quoc & Da Nang (Alcohol-Free)</div>
+    <div>Aug 30 – Sep 6, 2025 &bull; Group: 4 persons</div>
+    <div class="note">International Flight: Air India (Cochin–Delhi–Ho Chi Minh City–Delhi) – ₹5,000/person (employee fare)</div>
+  </header>
+  
+  <div class="section">
+    <h2>Journey Map</h2>
+    <div class="map-container">
+      <style>
+        .map-container {
+          position: relative;
+          width: 100%;
+          height: 500px;
+          overflow: hidden;
+          border-radius: 20px;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+          border: 3px solid rgba(255,255,255,0.3);
+        }
+        #map {
+          width: 100%;
+          height: 100%;
+          filter: saturate(1.1) contrast(1.05);
+        }
+        .map-legend {
+          position: absolute;
+          bottom: 15px;
+          right: 15px;
+          background: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          padding: 15px 18px;
+          border-radius: 12px;
+          font-size: 12px;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+          z-index: 1;
+          max-height: 350px;
+          overflow-y: auto;
+          border: 1px solid rgba(255,255,255,0.3);
+          transition: all 0.3s ease;
+        }
+        
+        .map-legend:hover {
+          background: rgba(255, 255, 255, 0.98);
+          transform: scale(1.02);
+        }
+        
+        .map-legend div {
+          margin: 5px 0;
+          display: flex;
+          align-items: center;
+          transition: all 0.3s ease;
+          padding: 2px 0;
+          border-radius: 6px;
+        }
+        
+        .map-legend div:hover {
+          background: rgba(102, 126, 234, 0.1);
+          padding-left: 5px;
+        }
+        
+        .map-legend span {
+          margin-left: 8px;
+          font-weight: 500;
+        }
+        .legend-icon {
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
+        .legend-start {
+          background: #4caf50;
+        }
+        .legend-stop {
+          background: #ff6b6b;
+        }
+        .legend-end {
+          background: #3f51b5;
+        }
+        .legend-path {
+          width: 16px;
+          height: 3px;
+          background: #0984e3;
+          border-radius: 0;
+        }
+        .gm-style-iw {
+          font-family: 'Poppins', sans-serif !important;
+        }
+        .location-info {
+          padding: 5px;
+          max-width: 200px;
+        }
+        .location-info h3 {
+          margin: 0 0 5px 0;
+          color: #1e90ff;
+          font-size: 14px;
+        }
+        .location-info p {
+          margin: 5px 0;
+          font-size: 12px;
+        }
+      </style>
+      <div id="map"></div>
+      <div class="map-legend">
+        <div><span class="legend-icon legend-start"></span><span>Start (Cochin)</span></div>
+        <div><span class="legend-icon legend-transit" style="background: #ffc107;"></span><span>Transit Points</span></div>
+        <div><span class="legend-icon legend-stop"></span><span>Destination Cities</span></div>
+        <div><span class="legend-icon" style="background-image: url('https://maps.google.com/mapfiles/ms/icons/lodging.png'); background-size: cover; background-color: transparent;"></span><span>Hotel Locations</span></div>
+        <div><span class="legend-icon" style="background: #3f51b5;"></span><span>Flight Routes</span></div>
+        <div><span class="legend-icon" style="background: #ff9800;"></span><span>Bus Routes</span></div>
+        <div><span class="legend-icon" style="background: #00bcd4;"></span><span>Ferry Routes</span></div>
+        <div><span class="legend-icon" style="background: #009688; height: 2px; border-top: 2px dashed #009688;"></span><span>Hotel-City Connections</span></div>
+        <div><span class="legend-icon" style="background: #e91e63;"></span><span>Port/Airport-Hotel Routes</span></div>
+        <div style="margin-top: 5px;"><small>Click markers for details</small></div>
+      </div>
+    </div>
+    
+    <script>
+      // Location coordinates and details
+      const tripLocations = [
+        {
+          name: "Cochin",
+          position: { lat: 9.9312, lng: 76.2673 },
+          description: "Trip starting point in India",
+          isStart: true
+        },
+        {
+          name: "Delhi",
+          position: { lat: 28.6139, lng: 77.2090 },
+          description: "Transit point for international flight",
+          isTransit: true
+        },
+        {
+          name: "Ho Chi Minh City",
+          position: { lat: 10.8231, lng: 106.6297 },
+          description: "Aug 30-31: City exploration",
+          isDestination: true
+        },
+        {
+          name: "Rach Gia",
+          position: { lat: 10.0164, lng: 105.0801 },
+          description: "Transit point for ferry to Phu Quoc",
+          isTransit: true
+        },
+        {
+          name: "Bai Vong Port",
+          position: { lat: 10.149255152655643, lng: 104.03757056614155 },
+          description: "Cảng Bãi Vòng - Phu Quoc Express Port - Ferry arrival from Rach Gia",
+          isTransit: true,
+          link: "https://maps.app.goo.gl/T8y36ZKBmAXwLp7h9"
+        },
+        {
+          name: "Phu Quoc International Airport",
+          position: { lat: 10.162843710957757, lng: 103.9978415336832 },
+          description: "Departure point for flight to Da Nang (PQC)",
+          isTransit: true,
+          link: "https://maps.app.goo.gl/YW2GDyMmgjwWnBhP9"
+        },
+        {
+          name: "Da Nang",
+          position: { lat: 16.0544, lng: 108.2022 },
+          description: "Sep 4-6: Coastal city",
+          isDestination: true
+        }
+      ];
+      
+      // Specific hotel locations with exact coordinates
+      const hotelLocations = [
+        {
+          name: "Baoanh Hostel",
+          position: { lat: 10.7680065, lng: 106.6936015 }, // Exact coordinates from Google Maps
+          description: "Aug 30-31: Baoanh Hostel",
+          city: "Ho Chi Minh City",
+          stayDays: "Aug 30-31",
+          link: "https://maps.app.goo.gl/74L95NxpN9Ea7PLWA",
+          hotelDetails: {
+            name: "Baoanh Hostel",
+            address: "241/11/6 Phạm Ngũ Lão, District 1, Ho Chi Minh City",
+            amenities: "Free WiFi, Air conditioning, Shared kitchen",
+            price: "Budget-friendly option, no breakfast",
+            nearbyAttractions: "Walking distance to Bui Vien Street and Ben Thanh Market"
+          }
+        },
+        {
+          name: "9 Station Hostel & Bar",
+          position: { lat: 10.2127382, lng: 103.9591228 }, // Exact coordinates from Google Maps
+          description: "Sep 1-4: 9 Station Hostel & Bar",
+          city: "Phu Quoc",
+          stayDays: "Sep 1-4",
+          link: "https://maps.app.goo.gl/eQWBTqzdEGUK45496",
+          hotelDetails: {
+            name: "9 Station Hostel & Bar",
+            address: "98/10 Trần Hưng Đạo, Dương Đông, Phu Quoc",
+            amenities: "Swimming pool, Free WiFi, Shared lounge, Bar (non-alcoholic drinks available)",
+            price: "Mid-range option, various room types available",
+            nearbyAttractions: "Close to Dinh Cau Night Market and Long Beach"
+          }
+        },
+        {
+          name: "Seahorse Tropical Office & Hotel",
+          position: { lat: 16.0514389, lng: 108.2464733 }, // Exact coordinates from Google Maps
+          description: "Sep 4-6: Seahorse Hotel",
+          city: "Da Nang",
+          stayDays: "Sep 4-6",
+          link: "https://maps.app.goo.gl/ChsRZvWDeRhmr3Ts6",
+          hotelDetails: {
+            name: "Seahorse Tropical Office & Hotel",
+            address: "14 An Thượng 2, Bắc Mỹ An, Da Nang",
+            amenities: "Rooftop pool, Free WiFi, Breakfast options, Air conditioning",
+            price: "Modern rooms with city views",
+            nearbyAttractions: "5-minute walk to My Khe Beach, easy access to city center"
+          }
+        }
+      ];
+      
+      // Transportation details
+      const transportRoutes = [
+        { 
+          from: "Cochin", 
+          to: "Delhi", 
+          mode: "flight",
+          details: "Domestic flight from Cochin to Delhi",
+          icon: "✈️"
+        },
+        { 
+          from: "Delhi", 
+          to: "Ho Chi Minh City", 
+          mode: "flight",
+          details: "Air India flight, employee fare",
+          icon: "✈️"
+        },
+        { 
+          from: "Ho Chi Minh City", 
+          to: "Rach Gia", 
+          mode: "bus",
+          details: "Night bus: departs 11:30 p.m., arrives ~5:00 a.m.",
+          icon: "🚌"
+        },
+        { 
+          from: "Rach Gia", 
+          to: "Bai Vong Port", 
+          mode: "ferry",
+          details: "Superdong ferry: 7:00 a.m. - 9:40 a.m.",
+          icon: "🚢"
+        },
+        { 
+          from: "Phu Quoc International Airport", 
+          to: "Da Nang", 
+          mode: "flight",
+          details: "Flight PQC-DAD: 15:25-17:10",
+          icon: "✈️"
+        },
+        { 
+          from: "Da Nang", 
+          to: "Ho Chi Minh City", 
+          mode: "flight",
+          details: "Flight DAD-SGN: 7:40 a.m.",
+          icon: "✈️"
+        },
+        { 
+          from: "Ho Chi Minh City", 
+          to: "Delhi", 
+          mode: "flight",
+          details: "Air India flight, 8:55 p.m.",
+          icon: "✈️"
+        },
+        { 
+          from: "Delhi", 
+          to: "Cochin", 
+          mode: "flight",
+          details: "Domestic flight from Delhi to Cochin",
+          icon: "✈️"
+        }
+      ];
+      
+      // Initialize the map
+      function initMap() {
+        // Create the map centered on Vietnam
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 14.0583, lng: 108.2772 },
+          zoom: 5,
+          mapTypeId: google.maps.MapTypeId.TERRAIN,
+          mapTypeControl: true,
+          mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            position: google.maps.ControlPosition.TOP_RIGHT
+          },
+          fullscreenControl: false,
+          streetViewControl: false
+        });
+        
+        // Add custom styles to the map
+        map.setOptions({
+          styles: [
+            {
+              featureType: "water",
+              elementType: "geometry.fill",
+              stylers: [{ color: "#d3e6fd" }]
+            },
+            {
+              featureType: "administrative",
+              elementType: "labels.text.fill",
+              stylers: [{ color: "#1e90ff" }]
+            }
+          ]
+        });
+        
+        // Create markers for each location
+        const markers = tripLocations.map(location => {
+          // Create marker
+          let markerIcon = {
+            path: google.maps.SymbolPath.CIRCLE,
+            fillColor: "#ff6b6b", // Default for destinations
+            fillOpacity: 1,
+            strokeWeight: 2,
+            strokeColor: "#ffffff",
+            scale: 9
+          };
+          
+          // Special icon for start location (Cochin)
+          if (location.isStart) {
+            markerIcon.fillColor = "#4caf50"; // Green for start
+            markerIcon.scale = 10;
+          }
+          
+          // Special icon for transit locations (Delhi, Rach Gia)
+          if (location.isTransit) {
+            markerIcon.fillColor = "#ffc107"; // Yellow for transit
+            markerIcon.scale = 7;
+            
+            // Special icon for Bai Vong Port
+            if (location.name === "Bai Vong Port") {
+              markerIcon = {
+                url: "https://maps.google.com/mapfiles/ms/icons/ferry.png",
+                size: new google.maps.Size(32, 32),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(16, 32),
+                scaledSize: new google.maps.Size(32, 32)
+              };
+            }
+            
+            // Special icon for Airport
+            if (location.name === "Phu Quoc International Airport") {
+              markerIcon = {
+                url: "https://maps.google.com/mapfiles/ms/icons/plane.png",
+                size: new google.maps.Size(32, 32),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(16, 32),
+                scaledSize: new google.maps.Size(32, 32)
+              };
+            }
+          }
+          
+          // Special icon for destination cities
+          if (location.isDestination) {
+            markerIcon.fillColor = "#ff6b6b"; // Red for destinations
+            markerIcon.scale = 9;
+          }
+          
+          // Create the marker
+          const marker = new google.maps.Marker({
+            position: location.position,
+            map: map,
+            title: location.name,
+            icon: markerIcon,
+            animation: google.maps.Animation.DROP,
+            zIndex: location.isStart ? 100 : (location.isTransit ? 10 : 20)
+          });
+          
+          // Create info window content
+          let contentString = `
+            <div class="location-info">
+              <h3>${location.name}</h3>
+              <p>${location.description}</p>
+          `;
+          
+          // Add link to Google Maps if available
+          if (location.link) {
+            contentString += `<p><a href="${location.link}" target="_blank">View on Google Maps</a></p>`;
+          }
+          
+          contentString += `</div>
+          `;
+          
+          // Create info window
+          const infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+          
+          // Add click listener to open info window
+          marker.addListener("click", () => {
+            infowindow.open(map, marker);
+          });
+          
+          return marker;
+        });
+        
+        // Create hotel markers with special hotel icons
+        const hotelMarkers = hotelLocations.map(hotel => {
+          // Create hotel icon
+          const hotelIcon = {
+            url: "https://maps.google.com/mapfiles/ms/icons/lodging.png",
+            size: new google.maps.Size(32, 32),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(16, 32),
+            scaledSize: new google.maps.Size(32, 32)
+          };
+          
+          // Create the marker
+          const marker = new google.maps.Marker({
+            position: hotel.position,
+            map: map,
+            title: hotel.name,
+            icon: hotelIcon,
+            animation: google.maps.Animation.DROP,
+            zIndex: 50 // Higher than city markers to ensure visibility
+          });
+          
+          // Create info window content with detailed hotel information
+          let contentString = `
+            <div class="location-info">
+              <h3>${hotel.name}</h3>
+              <p><strong>City:</strong> ${hotel.city}</p>
+              <p><strong>Stay:</strong> ${hotel.stayDays}</p>
+              <p><a href="${hotel.link}" target="_blank">View on Google Maps</a></p>
+          `;
+          
+          // Add detailed hotel information
+          contentString += `
+            <div style="margin-top: 8px; padding: 8px; background: #f8fbff; border-radius: 5px;">
+              <p style="margin: 3px 0;"><strong>Address:</strong> ${hotel.hotelDetails.address}</p>
+              <p style="margin: 3px 0;"><strong>Amenities:</strong> ${hotel.hotelDetails.amenities}</p>
+              <p style="margin: 3px 0;"><strong>Price:</strong> ${hotel.hotelDetails.price}</p>
+              <p style="margin: 3px 0;"><strong>Nearby:</strong> ${hotel.hotelDetails.nearbyAttractions}</p>
+            </div>
+          `;
+          
+          contentString += `</div>`;
+          
+          // Create info window
+          const infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 300
+          });
+          
+          // Add click listener to open info window
+          marker.addListener("click", () => {
+            infowindow.open(map, marker);
+          });
+          
+          return marker;
+        });
+        
+        // Create polylines for the journey
+        const pathCoordinates = [];
+        const transportIcons = [];
+        
+        // Function to find location by name
+        function findLocation(name) {
+          return tripLocations.find(loc => loc.name === name);
+        }
+        
+        // Build the path coordinates
+        transportRoutes.forEach(route => {
+          const fromLocation = findLocation(route.from);
+          const toLocation = findLocation(route.to);
+          
+          if (fromLocation && toLocation) {
+            pathCoordinates.push([fromLocation.position, toLocation.position]);
+            
+            // Calculate midpoint for transport icon
+            const midLat = (fromLocation.position.lat + toLocation.position.lat) / 2;
+            const midLng = (fromLocation.position.lng + toLocation.position.lng) / 2;
+            
+            transportIcons.push({
+              position: { lat: midLat, lng: midLng },
+              icon: route.icon,
+              details: route.details,
+              from: route.from,
+              to: route.to,
+              mode: route.mode
+            });
+          }
+        });
+        
+        // Create polylines for each segment
+        pathCoordinates.forEach((path, index) => {
+          // Choose color based on transport mode
+          let strokeColor;
+          const transportMode = transportRoutes[index].mode;
+          
+          switch(transportMode) {
+            case 'flight':
+              strokeColor = '#3f51b5';
+              break;
+            case 'bus':
+              strokeColor = '#ff9800';
+              break;
+            case 'ferry':
+              strokeColor = '#00bcd4';
+              break;
+            default:
+              strokeColor = '#0984e3';
+          }
+          
+          // For flights, use straight geodesic lines
+          if (transportMode === 'flight') {
+            const polyline = new google.maps.Polyline({
+              path: path,
+              geodesic: true,
+              strokeColor: strokeColor,
+              strokeOpacity: 0.8,
+              strokeWeight: 3
+            });
+            
+            polyline.setMap(map);
+          } 
+          // For ground/sea transport, use Google Maps Directions API
+          else {
+            const directionsService = new google.maps.DirectionsService();
+            
+            const request = {
+              origin: path[0],
+              destination: path[1],
+              travelMode: transportMode === 'bus' ? google.maps.TravelMode.DRIVING : 
+                         (transportMode === 'ferry' ? google.maps.TravelMode.TRANSIT : 
+                          google.maps.TravelMode.DRIVING)
+            };
+            
+            directionsService.route(request, function(result, status) {
+              if (status === google.maps.DirectionsStatus.OK) {
+                // Create custom renderer to style the route
+                const directionsRenderer = new google.maps.DirectionsRenderer({
+                  map: map,
+                  directions: result,
+                  suppressMarkers: true, // Don't show default markers
+                  polylineOptions: {
+                    strokeColor: strokeColor,
+                    strokeOpacity: 0.8,
+                    strokeWeight: 4
+                  }
+                });
+              } else {
+                // Fall back to straight line if directions request fails
+                const polyline = new google.maps.Polyline({
+                  path: path,
+                  geodesic: false,
+                  strokeColor: strokeColor,
+                  strokeOpacity: 0.8,
+                  strokeWeight: 3
+                });
+                
+                polyline.setMap(map);
+              }
+            });
+          }
+        });
+        
+        // Add transport icons at the midpoint of each route
+        transportIcons.forEach(transportInfo => {
+          // Create marker for transport icon
+          const marker = new google.maps.Marker({
+            position: transportInfo.position,
+            map: map,
+            icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              scale: 0,
+            },
+            label: {
+              text: transportInfo.icon,
+              fontSize: "16px"
+            },
+            zIndex: 5
+          });
+          
+          // Create info window content
+          const contentString = `
+            <div class="location-info">
+              <h3>${transportInfo.from} to ${transportInfo.to}</h3>
+              <p><strong>Mode:</strong> ${transportInfo.mode.charAt(0).toUpperCase() + transportInfo.mode.slice(1)}</p>
+              <p>${transportInfo.details}</p>
+            </div>
+          `;
+          
+          // Create info window
+          const infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+          
+          // Add click listener to open info window
+          marker.addListener("click", () => {
+            infowindow.open(map, marker);
+          });
+        });
+        
+        // Connect cities to their hotels with dashed lines
+        function connectCityToHotel(cityName, hotelDetails) {
+          // Find the city and hotel coordinates
+          const city = tripLocations.find(loc => loc.name === cityName);
+          const hotel = hotelLocations.find(h => h.name === hotelDetails.name);
+          
+          if (city && hotel) {
+            // Create a dashed line connecting city to its hotel
+            const hotelConnector = new google.maps.Polyline({
+              path: [city.position, hotel.position],
+              geodesic: true,
+              strokeColor: '#009688',
+              strokeOpacity: 0.8,
+              strokeWeight: 2,
+              strokePattern: [
+                { offset: '0', repeat: '10px' }, 
+                { offset: '10px', repeat: '10px' }
+              ],
+              icons: [{
+                icon: {
+                  path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                  scale: 3,
+                  strokeColor: '#009688'
+                },
+                offset: '50%'
+              }]
+            });
+            
+            hotelConnector.setMap(map);
+          }
+        }
+        
+        // Connect each city to its hotel
+        connectCityToHotel("Ho Chi Minh City", { name: "Baoanh Hostel" });
+        // Connect Bai Vong Port to hotel directly
+        const baiVongPort = tripLocations.find(loc => loc.name === "Bai Vong Port");
+        const phuQuocHotel = hotelLocations.find(h => h.name === "9 Station Hostel & Bar");
+        
+        if (baiVongPort && phuQuocHotel) {
+          // Create a special connector for port to hotel (different style)
+          const portToHotel = new google.maps.Polyline({
+            path: [baiVongPort.position, phuQuocHotel.position],
+            geodesic: false,
+            strokeColor: '#e91e63',
+            strokeOpacity: 0.8,
+            strokeWeight: 3,
+            icons: [{
+              icon: {
+                path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                scale: 3,
+                strokeColor: '#e91e63'
+              },
+              offset: '50%'
+            }]
+          });
+          
+          portToHotel.setMap(map);
+        }
+        
+        // Connect airport to hotel as well
+        const phuQuocAirport = tripLocations.find(loc => loc.name === "Phu Quoc International Airport");
+        
+        if (phuQuocAirport && phuQuocHotel) {
+          // Create connector from hotel to airport
+          const hotelToAirport = new google.maps.Polyline({
+            path: [phuQuocHotel.position, phuQuocAirport.position],
+            geodesic: false,
+            strokeColor: '#e91e63',
+            strokeOpacity: 0.8,
+            strokeWeight: 3,
+            icons: [{
+              icon: {
+                path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+                scale: 3,
+                strokeColor: '#e91e63'
+              },
+              offset: '50%'
+            }]
+          });
+          
+          hotelToAirport.setMap(map);
+        }
+        
+        connectCityToHotel("Da Nang", { name: "Seahorse Tropical Office & Hotel" });
+        
+        // Auto-fit the map to show all markers
+        const bounds = new google.maps.LatLngBounds();
+        
+        // Add all city locations to bounds
+        tripLocations.forEach(location => {
+          bounds.extend(location.position);
+        });
+        
+        // Add all hotel locations to bounds
+        hotelLocations.forEach(hotel => {
+          bounds.extend(hotel.position);
+        });
+        
+        // Fit the map to show all markers
+        map.fitBounds(bounds);
+        
+        // Add zoom control to make it easier to zoom in on specific hotels
+        map.setOptions({
+          zoomControl: true,
+          zoomControlOptions: {
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
+          }
+        });
+      }
+    </script>
+  </div>
+
+  <div class="section">
+    <h2>Day-by-Day Itinerary</h2>
+    <style>
+      .itinerary-card {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        border-left: 5px solid;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .itinerary-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      }
+      
+      .itinerary-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+        border-radius: 0 15px 0 50px;
+        z-index: 0;
+      }
+      
+      .day-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .day-number {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-right: 1rem;
+        box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+      }
+      
+      .day-info {
+        flex-grow: 1;
+      }
+      
+      .day-date {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #667eea;
+        margin: 0;
+      }
+      
+      .day-route {
+        font-size: 0.9rem;
+        color: #7f8c8d;
+        margin: 0.2rem 0 0 0;
+        display: flex;
+        align-items: center;
+      }
+      
+      .route-arrow {
+        color: #667eea;
+        margin: 0 0.5rem;
+        font-weight: bold;
+      }
+      
+      .day-content {
+        margin-left: 65px;
+        position: relative;
+        z-index: 1;
+      }
+      
+      .activities {
+        margin-bottom: 1rem;
+      }
+      
+      .activity-item {
+        background: rgba(102, 126, 234, 0.05);
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        margin: 0.3rem 0.5rem 0.3rem 0;
+        display: inline-block;
+        font-size: 0.85rem;
+        color: #667eea;
+        font-weight: 500;
+        border: 1px solid rgba(102, 126, 234, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .activity-item:hover {
+        background: rgba(102, 126, 234, 0.1);
+        transform: scale(1.05);
+      }
+      
+      .overnight-info {
+        background: linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(102, 126, 234, 0.1));
+        border-radius: 10px;
+        padding: 0.8rem;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: #667eea;
+        font-weight: 500;
+      }
+      
+      .overnight-icon {
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+      }
+      
+      .pre-trip { border-left-color: #95a5a6; }
+      .day-1 { border-left-color: #e74c3c; }
+      .day-2 { border-left-color: #e67e22; }
+      .day-3 { border-left-color: #f39c12; }
+      .day-4 { border-left-color: #f1c40f; }
+      .day-5 { border-left-color: #2ecc71; }
+      .day-6 { border-left-color: #1abc9c; }
+      .day-7 { border-left-color: #3498db; }
+      .day-8 { border-left-color: #9b59b6; }
+      .post-trip { border-left-color: #34495e; }
+      
+      .transport-info {
+        background: rgba(52, 152, 219, 0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0.8rem;
+        margin: 0.5rem 0;
+        font-size: 0.85rem;
+        color: #3498db;
+        display: inline-block;
+        border: 1px solid rgba(52, 152, 219, 0.2);
+      }
+      
+      .hotel-link {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 2px solid rgba(102, 126, 234, 0.2);
+        transition: all 0.3s ease;
+      }
+      
+      .hotel-link:hover {
+        border-bottom-color: #667eea;
+        color: #764ba2;
+      }
+      
+      @media (max-width: 768px) {
+        .day-content {
+          margin-left: 0;
+          margin-top: 1rem;
+        }
+        
+        .day-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .day-number {
+          margin-bottom: 0.5rem;
+          margin-right: 0;
+        }
+      }
+    </style>
+    
+    <div class="itinerary-container">
+      <!-- Pre-trip -->
+      <div class="itinerary-card pre-trip">
+        <div class="day-header">
+          <div class="day-number">Pre</div>
+          <div class="day-info">
+            <div class="day-date">29 Aug (Friday)</div>
+            <div class="day-route">🏠 Cochin <span class="route-arrow">→</span> 🏙️ Delhi</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="activities">
+            <span class="activity-item">✈️ Domestic Flight</span>
+            <span class="activity-item">🔄 International Connection</span>
+          </div>
+          <div class="overnight-info">
+            <span class="overnight-icon">🛏️</span>
+            Flight or Delhi Hotel
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 1 -->
+      <div class="itinerary-card day-1">
+        <div class="day-header">
+          <div class="day-number">1</div>
+          <div class="day-info">
+            <div class="day-date">30 Aug (Saturday)</div>
+            <div class="day-route">🏙️ Delhi <span class="route-arrow">→</span> 🏙️ Ho Chi Minh City</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="transport-info">✈️ International Flight • Air India</div>
+          <div class="activities">
+            <span class="activity-item">🏨 Check-in Baoanh Hostel</span>
+            <span class="activity-item">🍜 Late Dinner</span>
+            <span class="activity-item">🎵 Bui Vien Street</span>
+            <span class="activity-item">🍲 Street Food</span>
+          </div>
+          <div class="overnight-info">
+            <span class="overnight-icon">🏨</span>
+            HCMC • <a href="https://maps.app.goo.gl/74L95NxpN9Ea7PLWA" target="_blank" class="hotel-link">Baoanh Hostel</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 2 -->
+      <div class="itinerary-card day-2">
+        <div class="day-header">
+          <div class="day-number">2</div>
+          <div class="day-info">
+            <div class="day-date">31 Aug (Sunday)</div>
+            <div class="day-route">🏙️ HCMC <span class="route-arrow">→</span> 🚌 Rach Gia</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="activities">
+            <span class="activity-item">🏪 Ben Thanh Market</span>
+            <span class="activity-item">🏛️ War Museum</span>
+            <span class="activity-item">⛪ Notre Dame Cathedral</span>
+          </div>
+          <div class="transport-info">🚌 Night Bus • 11:30 PM → 5:00 AM • ₹1,400</div>
+          <div class="overnight-info">
+            <span class="overnight-icon">🚌</span>
+            Overnight Bus Journey
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 3 -->
+      <div class="itinerary-card day-3">
+        <div class="day-header">
+          <div class="day-number">3</div>
+          <div class="day-info">
+            <div class="day-date">1 Sep (Monday)</div>
+            <div class="day-route">🚌 Rach Gia <span class="route-arrow">→</span> 🏝️ Phu Quoc</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="transport-info">🚢 Superdong Ferry • 7:00 AM → 9:40 AM • ₹1,308</div>
+          <div class="activities">
+            <span class="activity-item">🏨 Check-in Hotel</span>
+            <span class="activity-item">🏊 Beach Swimming</span>
+            <span class="activity-item">😎 Relax</span>
+            <span class="activity-item">🌃 Night Market</span>
+          </div>
+          <div class="overnight-info">
+            <span class="overnight-icon">🏨</span>
+            Phu Quoc • <a href="https://maps.app.goo.gl/eQWBTqzdEGUK45496" target="_blank" class="hotel-link">9 Station Hostel & Bar</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 4 -->
+      <div class="itinerary-card day-4">
+        <div class="day-header">
+          <div class="day-number">4</div>
+          <div class="day-info">
+            <div class="day-date">2 Sep (Tuesday)</div>
+            <div class="day-route">🏝️ Phu Quoc Island Adventure</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="activities">
+            <span class="activity-item">🏝️ Island Tour</span>
+            <span class="activity-item">🤿 Snorkeling</span>
+            <span class="activity-item">🏛️ Visit Pagoda</span>
+            <span class="activity-item">🏐 Beach Games</span>
+            <span class="activity-item">🌅 Sunset Beach Club</span>
+            <span class="activity-item">🥤 Mocktails</span>
+          </div>
+          <div class="overnight-info">
+            <span class="overnight-icon">🏨</span>
+            Phu Quoc • 9 Station Hostel & Bar
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 5 -->
+      <div class="itinerary-card day-5">
+        <div class="day-header">
+          <div class="day-number">5</div>
+          <div class="day-info">
+            <div class="day-date">3 Sep (Wednesday)</div>
+            <div class="day-route">🏝️ Phu Quoc Exploration</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="activities">
+            <span class="activity-item">🏖️ Sao Beach</span>
+            <span class="activity-item">🚠 Hon Thom Cable Car</span>
+            <span class="activity-item">🏊 Resort Pool</span>
+            <span class="activity-item">🌾 Local Farms Visit</span>
+          </div>
+          <div class="overnight-info">
+            <span class="overnight-icon">🏨</span>
+            Phu Quoc • 9 Station Hostel & Bar
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 6 -->
+      <div class="itinerary-card day-6">
+        <div class="day-header">
+          <div class="day-number">6</div>
+          <div class="day-info">
+            <div class="day-date">4 Sep (Thursday)</div>
+            <div class="day-route">🏝️ Phu Quoc <span class="route-arrow">→</span> 🏙️ Da Nang</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="transport-info">✈️ Flight PQC-DAD • 3:25 PM → 5:10 PM</div>
+          <div class="activities">
+            <span class="activity-item">🏨 Check-in Hotel</span>
+            <span class="activity-item">🏖️ My Khe Beach</span>
+            <span class="activity-item">🏪 Han Market</span>
+            <span class="activity-item">🚶 Riverside Walk</span>
+          </div>
+          <div class="overnight-info">
+            <span class="overnight-icon">🏨</span>
+            Da Nang • <a href="https://maps.app.goo.gl/ChsRZvWDeRhmr3Ts6" target="_blank" class="hotel-link">Seahorse Hotel</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 7 -->
+      <div class="itinerary-card day-7">
+        <div class="day-header">
+          <div class="day-number">7</div>
+          <div class="day-info">
+            <div class="day-date">5 Sep (Friday)</div>
+            <div class="day-route">🏙️ Da Nang Full Day</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="activities">
+            <span class="activity-item">⛰️ Ba Na Hills</span>
+            <span class="activity-item">🌉 Golden Bridge</span>
+            <span class="activity-item">🎢 Amusement Park</span>
+            <span class="activity-item">🐉 Dragon Bridge</span>
+            <span class="activity-item">🎡 Asia Park</span>
+            <span class="activity-item">🎮 Arcade Games</span>
+          </div>
+          <div class="overnight-info">
+            <span class="overnight-icon">🏨</span>
+            Da Nang • Seahorse Hotel
+          </div>
+        </div>
+      </div>
+      
+      <!-- Day 8 -->
+      <div class="itinerary-card day-8">
+        <div class="day-header">
+          <div class="day-number">8</div>
+          <div class="day-info">
+            <div class="day-date">6 Sep (Saturday)</div>
+            <div class="day-route">🏙️ Da Nang <span class="route-arrow">→</span> 🏙️ HCMC <span class="route-arrow">→</span> 🏙️ Delhi</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="transport-info">✈️ Morning Flight DAD-SGN • 7:40 AM</div>
+          <div class="activities">
+            <span class="activity-item">🛍️ Shopping</span>
+            <span class="activity-item">💆 Spa & Massage</span>
+            <span class="activity-item">🏮 Chinatown</span>
+          </div>
+          <div class="transport-info">✈️ Evening Flight SGN-DEL • 8:55 PM</div>
+          <div class="overnight-info">
+            <span class="overnight-icon">✈️</span>
+            Flight to Delhi
+          </div>
+        </div>
+      </div>
+      
+      <!-- Post-trip -->
+      <div class="itinerary-card post-trip">
+        <div class="day-header">
+          <div class="day-number">End</div>
+          <div class="day-info">
+            <div class="day-date">7 Sep (Sunday)</div>
+            <div class="day-route">🏙️ Delhi <span class="route-arrow">→</span> 🏠 Cochin</div>
+          </div>
+        </div>
+        <div class="day-content">
+          <div class="activities">
+            <span class="activity-item">✈️ Domestic Connection</span>
+            <span class="activity-item">🏠 Home Sweet Home</span>
+          </div>
+          <div class="overnight-info">
+            <span class="overnight-icon">🏠</span>
+            Back Home
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Transport Details</h2>
+    <ul>
+      <li><b>Domestic flights (India):</b>
+        <ul>
+          <li>Cochin → Delhi (Pre-trip): Times TBD</li>
+          <li>Delhi → Cochin (Post-trip): Times TBD</li>
+        </ul>
+      </li>
+      <li><b>Intl. flight (DEL–SGN–DEL):</b> ₹5,000/person (employee fare)</li>
+      <li><b>Bus (HCMC–Rach Gia, overnight):</b> ₹1,400/person (₫500,000)</li>
+      <li><b>Cab (Rach Gia bus station → ferry port):</b> Cost TBD (short ride, pay locally)</li>
+      <li><b>Ferry (Rach Gia–Phu Quoc):</b> ₹1,308/person (Superdong, departs 7:00 a.m., arrives 9:40 a.m.)</li>
+      <li><b>Domestic flights (Vietnam):</b>
+        <ul>
+          <li>Phu Quoc → Da Nang: 15:25–17:10, ~₹6,000/person</li>
+          <li>Da Nang → HCMC: 7:40 a.m., ~₹5,000/person</li>
+        </ul>
+      </li>
+      <li><b>Local:</b> Grab/taxi, airport transfers, short buses: ₹2,000/person</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Accommodation</h2>
+    <div class="accommodation-list">
+      <ul>
+        <li><b>30–31 Aug:</b> HCMC at <a href="https://maps.app.goo.gl/74L95NxpN9Ea7PLWA" target="_blank">Baoanh Hostel</a></li>
+        <li><b>1–4 Sep:</b> Phu Quoc at <a href="https://maps.app.goo.gl/eQWBTqzdEGUK45496" target="_blank">9 Station Hostel & Bar</a></li>
+        <li><b>4–6 Sep:</b> Da Nang at <a href="https://maps.app.goo.gl/ChsRZvWDeRhmr3Ts6" target="_blank">Seahorse Tropical Office & Hotel</a></li>
+      </ul>
+    </div>
+    <table>
+      <tr><th>Option</th><th>Total Cost (for 4)</th><th>Per Person (6 nights)</th><th>Breakfast Included?</th></tr>
+      <tr><td>Option 1</td><td>₹2,500</td><td>₹625</td><td>No</td></tr>
+      <tr><td>Option 2</td><td>₹8,660</td><td>₹2,165</td><td>Yes</td></tr>
+      <tr><td>Option 3</td><td>₹7,316</td><td>₹1,829</td><td>No</td></tr>
+    </table>
+    <div class="note">Choose the option that best fits your comfort and food preference.</div>
+  </div>
+
+  <div class="section">
+    <h2>Estimated Budget Per Person (INR, 2025 rates)</h2>
+    <table>
+      <tr><th>Item</th><th>Cost (INR)</th></tr>
+      <tr><td>Intl. flight (DEL–SGN–DEL)</td><td>₹5,000</td></tr>
+      <tr><td>Bus + Ferry (HCMC–PQ)</td><td>₹3,200</td></tr>
+      <tr><td>Domestic flights (2)</td><td>~₹11,000</td></tr>
+      <tr><td>Hotels (6 nights, shared)</td><td>₹625 / ₹1,829 / ₹2,165</td></tr>
+      <tr><td>Meals & Non-alcoholic Drinks</td><td>₹8,000–₹11,000</td></tr>
+      <tr><td>Activities & Tours</td><td>₹7,000–₹9,000</td></tr>
+      <tr><td>Local transport</td><td>₹2,000</td></tr>
+      <tr><td>Vietnam e-visa</td><td>₹2,200</td></tr>
+      <tr><th>Total (per person)</th><th>₹39,025–₹45,565</th></tr>
+    </table>
+    <div class="note">
+      <b>Hotel options per person:</b> ₹625 (Option 1, no breakfast), ₹1,829 (Option 3, no breakfast), ₹2,165 (Option 2, with breakfast).<br>
+      All calculations are based on 4 people sharing rooms. Bus + Ferry includes a buffer for cab fare. Meals, activities, and local transport are estimated for comfort and flexibility.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Bachelor Highlights</h2>
+    <ul>
+      <li><b>HCMC:</b> Bui Vien Street (music, night market, pool/snooker, street food), Ben Thanh night market, rooftop cafes, spa, foot massage, escape rooms, bowling</li>
+      <li><b>Phu Quoc:</b> Snorkeling/island tour, cable car, beach volleyball, kayaking, Dinh Cau night market (coconut ice cream, seafood), resorts with pool, non-alcoholic beach clubs</li>
+      <li><b>Da Nang:</b> Ba Na Hills & Golden Bridge, amusement park, My Khe Beach, dragon bridge, Han market, Asia Park (rides, arcade, Ferris wheel), riverside walk</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Booking Links</h2>
+    <div class="links">
+      <a href="https://12go.asia/en" target="_blank">Bus: 12Go Asia</a>
+      <a href="https://vexere.com/en-US/" target="_blank">Vexere</a>
+      <a href="https://superdong.com.vn/en/" target="_blank">Ferry: Superdong</a>
+      <a href="https://www.vietjetair.com" target="_blank">VietJet</a>
+      <a href="https://www.vietnamairlines.com" target="_blank">Vietnam Airlines</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Tips</h2>
+    <ul>
+      <li>Book bus/ferry and flights early for best rates.</li>
+      <li>Carry snacks for bus/ferry rides.</li>
+      <li>Try local fruit juices, smoothies, and coconut water at all destinations.</li>
+      <li>Respect local customs at pagodas and temples.</li>
+      <li>Carry cash for markets and small eateries.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Trip Countdown</h2>
+    <div class="countdown-container">
+      <style>
+        .countdown-container {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+          background-size: 200% 200%;
+          animation: gradientShift 6s ease infinite;
+          border-radius: 20px;
+          padding: 2rem;
+          color: white;
+          text-align: center;
+          box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .countdown-container::before {
+          content: '';
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+          background-size: 40px 40px;
+          animation: float 15s linear infinite;
+          opacity: 0.4;
+        }
+        
+        .countdown-title {
+          font-size: 1.4rem;
+          margin-bottom: 1.5rem;
+          font-weight: 600;
+          position: relative;
+          z-index: 1;
+        }
+        .countdown-timer {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          position: relative;
+          z-index: 1;
+        }
+        .countdown-box {
+          background: rgba(255,255,255,0.25);
+          backdrop-filter: blur(10px);
+          border-radius: 15px;
+          padding: 1.2rem;
+          margin: 0 0.8rem;
+          min-width: 90px;
+          border: 1px solid rgba(255,255,255,0.3);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .countdown-box::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          transition: left 0.5s ease;
+        }
+        
+        .countdown-box:hover {
+          transform: translateY(-5px);
+          background: rgba(255,255,255,0.35);
+        }
+        
+        .countdown-box:hover::before {
+          left: 100%;
+        }
+        
+        .countdown-value {
+          font-size: 2.5rem;
+          font-weight: 800;
+          margin-bottom: 0.3rem;
+          text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .countdown-label {
+          font-size: 0.85rem;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          opacity: 0.9;
+          font-weight: 500;
+        }
+        @media (max-width: 600px) {
+          .countdown-box {
+            margin: 0.3rem;
+            min-width: 60px;
+            padding: 0.6rem;
+          }
+          .countdown-value {
+            font-size: 1.5rem;
+          }
+        }
+      </style>
+      <div class="countdown-title">Your Bachelor Adventure Begins In:</div>
+      <div class="countdown-timer">
+        <div class="countdown-box">
+          <div id="days" class="countdown-value">--</div>
+          <div class="countdown-label">days</div>
+        </div>
+        <div class="countdown-box">
+          <div id="hours" class="countdown-value">--</div>
+          <div class="countdown-label">hours</div>
+        </div>
+        <div class="countdown-box">
+          <div id="minutes" class="countdown-value">--</div>
+          <div class="countdown-label">minutes</div>
+        </div>
+        <div class="countdown-box">
+          <div id="seconds" class="countdown-value">--</div>
+          <div class="countdown-label">seconds</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>FAQ</h2>
+    <style>
+      .faq-item {
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+      }
+      
+      .faq-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      }
+      
+      .faq-question {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(240, 147, 251, 0.1));
+        color: #667eea;
+        padding: 1.2rem 1.5rem;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .faq-question::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        transition: left 0.5s ease;
+      }
+      
+      .faq-question:hover {
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(240, 147, 251, 0.15));
+        transform: scale(1.02);
+      }
+      
+      .faq-question:hover::before {
+        left: 100%;
+      }
+      
+      .faq-question::after {
+        content: "+";
+        font-size: 1.8rem;
+        font-weight: 300;
+        transition: transform 0.3s ease;
+        color: #667eea;
+      }
+      .faq-question.active {
+        border-radius: 12px 12px 0 0;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+      }
+      .faq-question.active::after {
+        content: "−";
+        transform: rotate(180deg);
+        color: white;
+      }
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        background: rgba(248, 251, 255, 0.8);
+        padding: 0 1.5rem;
+        border-radius: 0 0 12px 12px;
+        border: 1px solid rgba(102, 126, 234, 0.1);
+        border-top: none;
+      }
+      .faq-answer.show {
+        max-height: 600px;
+        padding: 1.5rem;
+        animation: fadeInUp 0.4s ease;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">Do I need a visa for Vietnam?</div>
+        <div class="faq-answer">
+          <p>Yes, most visitors to Vietnam need an e-visa. The e-visa costs around ₹2,200 and can be obtained online through the official Vietnam Immigration website. Processing typically takes 3-5 business days. Make sure your passport is valid for at least 6 months beyond your travel dates.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">What currency should I carry?</div>
+        <div class="faq-answer">
+          <p>The local currency is Vietnamese Dong (VND). While major hotels and restaurants accept cards, it's best to carry cash for street food, markets, and smaller shops. ATMs are widely available in cities. Exchange some money upon arrival at the airport for initial expenses.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How is the weather in Vietnam in August/September?</div>
+        <div class="faq-answer">
+          <p>August-September is warm and humid throughout Vietnam. Ho Chi Minh City and Phu Quoc may experience occasional rain showers. Da Nang will be hot and sunny. Pack light, breathable clothing, swimwear, a light rain jacket, sunscreen, and a hat.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">What are the best local foods to try?</div>
+        <div class="faq-answer">
+          <p>Don't miss trying pho (noodle soup), banh mi (Vietnamese sandwich), fresh spring rolls, bun cha (grilled pork with noodles), and Vietnamese coffee. Each region has its specialties: try hu tieu in HCMC, seafood in Phu Quoc, and Mi Quang noodles in Da Nang.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How reliable is public transportation?</div>
+        <div class="faq-answer">
+          <p>Within cities, Grab is convenient and affordable. For longer distances, domestic flights are efficient but book early. The night bus to Rach Gia is comfortable with reclining seats, and the Superdong ferry to Phu Quoc is reliable but can be affected by weather conditions during monsoon season.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align:center; color:#ffffff; font-size:1.1rem; margin:3rem 0 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(240, 147, 251, 0.9)); backdrop-filter: blur(10px); border-radius: 20px; max-width: 900px; margin-left: auto; margin-right: auto; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+    <div style="font-weight: 600; margin-bottom: 0.5rem;">🌟 Ready for an Amazing Adventure? 🌟</div>
+    <div>Let me know if you want hotel or activity recommendations, or help booking tickets!</div>
+  </footer>
+
+  <script>
+    // FAQ functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+          question.classList.toggle('active');
+          const answer = question.nextElementSibling;
+          answer.classList.toggle('show');
+        });
+      });
+      
+      // Countdown timer
+      const tripDate = new Date('August 30, 2025 00:00:00').getTime();
+      
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = tripDate - now;
+        
+        // Time calculations
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Display results
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+        
+        // If countdown is over
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          document.getElementById('days').textContent = '0';
+          document.getElementById('hours').textContent = '0';
+          document.getElementById('minutes').textContent = '0';
+          document.getElementById('seconds').textContent = '0';
+        }
+      }
+      
+      // Initial call
+      updateCountdown();
+      
+      // Update every second
+      const countdownTimer = setInterval(updateCountdown, 1000);
+    });
+  </script>
+</body>
+</html>
